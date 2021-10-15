@@ -1,0 +1,56 @@
+#message {
+  display: none;
+  opacity: 10;
+  background: radial-gradient(#2d2b36, transparent);
+  color: white;
+  position: relative;
+  padding: 20px;
+  /* margin-top: 10px; */
+  border: 1px solid #ffd80e;
+  box-shadow: 0 0 20px 0 rgb(0 0 0 / 30%);
+  border-radius: 5px;
+  margin-left: 10px;
+  transition: 300ms;
+}
+:root {
+  --toastify-color-dark: #121212;
+}
+#message p {
+  padding: 10px 35px;
+  font-size: 18px;
+  background-color: rgba(210, 201, 255, 0.04);
+  border-radius: 10px;
+  transition: 300ms;
+}
+.black-background {
+  background-color: black;
+  color: white;
+}
+
+/* Add a green text color and a checkmark when the requirements are right */
+.valid {
+  color: green;
+  transition: 300ms;
+}
+
+.valid:before {
+  position: relative;
+  left: -35px;
+  content: "✔";
+  padding-left: 10px;
+  transition: 300ms;
+}
+
+/* Add a red text color and an "x" when the requirements are wrong */
+.invalid {
+  color: red;
+  transition: 300ms;
+}
+
+.invalid:before {
+  position: relative;
+  left: -35px;
+  content: "✖";
+  padding-left: 10px;
+  transition: 500ms;
+}

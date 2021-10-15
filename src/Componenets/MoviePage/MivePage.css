@@ -1,0 +1,32 @@
+.coutriesPr {
+    display: flex;
+    justify-content: space-evenly;
+    color: rgb(214, 214, 26);
+    transition: 200ms;
+    margin: 10px;
+    text-shadow: black;
+}
+
+.coutriesPr:hover {
+    color: rgb(235, 235, 38);
+    transition: 200ms;
+}
+
+.prTitle {
+    display: flex;
+    justify-content: center;
+    background-color: black;
+    color: white;
+    margin: 20px;
+    border-radius: 10px;
+}
+
+.coutries {
+    background-color: rgb(73, 73, 73);
+    border: 2px solid white;
+    border-radius: 10px;
+}
+
+.companieSection {
+    margin: 0px 50px;
+}
