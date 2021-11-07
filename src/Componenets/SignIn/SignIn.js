@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
-import { Link, Redirect } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -23,6 +23,7 @@ function validateEmail(email) {
   return re.test(String(email).toLowerCase());
 }
 export default function SignIn() {
+  const history = useHistory();
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
   const [checkBox, setCheckBox] = useState();
@@ -30,10 +31,7 @@ export default function SignIn() {
     event.preventDefault();
     const emailValidator = validateEmail(`${email}`);
     const userData = JSON.parse(localStorage.getItem("users") || "[]");
-    let validEmailT;
-    let validEmailF;
-    let validPasswordT;
-    let validPasswordF;
+
     if (!email) {
       toasted("error", "Email Must be Fill");
       return;
@@ -51,27 +49,23 @@ export default function SignIn() {
       return;
     }
 
-    userData.map((data) => {
-      if (data.email === email && data.password === password) {
-        validEmailT = data;
-        return;
-      } else {
-        validEmailF = false;
-      }
-    });
+    const validUser = userData.find(
+      (data) => data.email === email && data.password === password
+    );
 
-    if (validEmailT === undefined) {
+    if (validUser === undefined) {
       toasted("error", "Email or Password Is Not Exist");
       return;
     }
 
     toasted("success", "You are Signed In....");
 
-    store.dispatch({ type: "setUser", payload: JSON.stringify(validEmailT) });
+    store.dispatch({ type: "setUser", payload: validUser });
+    localStorage.setItem("UserLogedIn", validUser.id);
 
     setTimeout(() => {
-      window.location.href = "/profile";
-    }, 1000);
+      history.replace("/profile");
+    }, 500);
   }
   function changeHandler(event) {
     if (event.target.name == "email") {

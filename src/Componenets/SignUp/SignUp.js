@@ -37,7 +37,17 @@ export default function SignUp() {
           ...state,
           input: action.payload,
         };
-      case "setNames":
+      case "setNickName":
+        return {
+          ...state,
+          names: action.payload,
+        };
+      case "setFirstName":
+        return {
+          ...state,
+          names: action.payload,
+        };
+      case "setLastName":
         return {
           ...state,
           names: action.payload,
@@ -140,8 +150,12 @@ export default function SignUp() {
     console.log(state.names);
     passwordValidator(event);
 
-    if (name == "username") {
-      dispatch({ type: "setNames", payload: value });
+    if (name == "nickname") {
+      dispatch({ type: "setNickName", payload: value });
+    } else if (name == "firstname") {
+      dispatch({ type: "setFirstName", payload: value });
+    } else if (name == "lastname") {
+      dispatch({ type: "setLastName", payload: value });
     } else if (name == "email") {
       dispatch({ type: "setEmail", payload: value });
     } else if (name == "password") {
@@ -198,7 +212,6 @@ export default function SignUp() {
       length.classList.remove("valid");
       length.classList.add("invalid");
     }
-    return true;
   }
 
   return (
@@ -223,13 +236,32 @@ export default function SignUp() {
                 {/* <a href="/sigup" className="sign__logo">
                   <img src="img/logo.svg" alt="" />
                 </a> */}
+                <div className="sign__group">
+                  <input
+                    type="text"
+                    className="sign__input"
+                    name="nickname"
+                    title="What Should We Call you?"
+                    placeholder="Nick Name"
+                    onChange={handleChange}
+                  />
+                </div>
 
                 <div className="sign__group">
                   <input
                     type="text"
                     className="sign__input"
-                    name="username"
-                    placeholder="Name"
+                    name="firstname"
+                    placeholder="First Name"
+                    onChange={handleChange}
+                  />
+                </div>
+                <div className="sign__group">
+                  <input
+                    type="text"
+                    className="sign__input"
+                    name="lastname"
+                    placeholder="Last Name"
                     onChange={handleChange}
                   />
                 </div>

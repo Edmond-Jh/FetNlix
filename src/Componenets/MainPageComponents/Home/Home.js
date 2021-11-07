@@ -9,14 +9,10 @@ import HomeBg3 from "../../../img/home/home__bg3.jpg";
 import HomeBg4 from "../../../img/home/home__bg4.jpg";
 import HomeBg5 from "../../../img/home/home__bg5.jpg";
 
-// import "owl.carousel/dist/assets/owl.carousel.css";
-// import "owl.carousel";
-
 import { Swiper, SwiperSlide } from "swiper/react";
 
 // import styles bundle
 import "swiper/swiper-bundle.min.css";
-
 import "swiper/components/navigation/navigation.min.css";
 import SwiperCore, { Navigation } from "swiper";
 import { Link } from "react-router-dom";
@@ -35,6 +31,7 @@ export default function Home() {
         setPost(data);
       });
   }, []);
+
   return (
     <>
       <section className="home">
