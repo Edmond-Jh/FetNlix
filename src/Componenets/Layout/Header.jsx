@@ -10,9 +10,13 @@ export default function Header() {
   const ids = localStorage.getItem("UserLogedIn");
 
   const usersArar = JSON.parse(localStorage.getItem("users"));
-  const userId = usersArar.find(({ id }) => id == ids);
-
-  const userData = useSelector((state) => state.user);
+  let userId;
+  if (usersArar) {
+    userId = usersArar.find(({ id }) => id == ids);
+  }
+  console.log(userId?.nickname);
+  const userData = useSelector((state) => state.user.state);
+  console.log(userData);
 
   return (
     <header className="header">
@@ -184,7 +188,7 @@ export default function Header() {
                         fontSize: "15px",
                       }}
                     >
-                      {userData ? userData?.state.username : userId?.username}
+                      {userData ? userData?.nickname : userId?.nickname}
                     </span>
                   </Link>
                 )}

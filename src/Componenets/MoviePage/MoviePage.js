@@ -107,6 +107,16 @@ export default function MoviePage() {
                             );
                           })}
                         </li>
+                        <li>
+                          <span>Companies : </span>
+                          {data?.production_companies.map((data) => {
+                            return (
+                              <a key={data.id} className="prSpan">
+                                {data.name}
+                              </a>
+                            );
+                          })}
+                        </li>
                       </ul>
                       <div className="card__description">{data?.overview}</div>
                     </div>
@@ -172,7 +182,7 @@ export default function MoviePage() {
         </div>
         {/* <!--end details content--> */}
       </section>
-      <section className="companieSection">
+      {/* <section className="companieSection">
         <div className="coutries">
           <div className="prTitle">Production Companies</div>
           <div className="coutriesPr">
@@ -185,7 +195,7 @@ export default function MoviePage() {
             })}
           </div>
         </div>
-      </section>
+      </section> */}
       <section className="content">
         <div className="content__head">
           <div className="container">
@@ -870,120 +880,6 @@ export default function MoviePage() {
                       <span className="card__category">
                         <a href="#">Action</a>
                         <a href="#">Triler</a>
-                      </span>
-                    </div>
-                  </div>
-                </div>
-                {/* <!-- end card --> */}
-
-                {/* <!-- card --> */}
-                <div className="col-6 col-sm-4 col-lg-6">
-                  <div className="card">
-                    <div className="card__cover">
-                      <img src="img/covers/cover2.jpg" alt="" />
-                      <a href="#" className="card__play">
-                        <i className="icon ion-ios-play"></i>
-                      </a>
-                      <span className="card__rate card__rate--green">7.1</span>
-                    </div>
-                    <div className="card__content">
-                      <h3 className="card__title">
-                        <a href="#">Benched</a>
-                      </h3>
-                      <span className="card__category">
-                        <a href="#">Comedy</a>
-                      </span>
-                    </div>
-                  </div>
-                </div>
-                {/* <!-- end card --> */}
-
-                {/* <!-- card --> */}
-                <div className="col-6 col-sm-4 col-lg-6">
-                  <div className="card">
-                    <div className="card__cover">
-                      <img src="img/covers/cover3.jpg" alt="" />
-                      <a href="#" className="card__play">
-                        <i className="icon ion-ios-play"></i>
-                      </a>
-                      <span className="card__rate card__rate--red">6.3</span>
-                    </div>
-                    <div className="card__content">
-                      <h3 className="card__title">
-                        <a href="#">Whitney</a>
-                      </h3>
-                      <span className="card__category">
-                        <a href="#">Romance</a>
-                        <a href="#">Drama</a>
-                        <a href="#">Music</a>
-                      </span>
-                    </div>
-                  </div>
-                </div>
-                {/* <!-- end card --> */}
-
-                {/* <!-- card --> */}
-                <div className="col-6 col-sm-4 col-lg-6">
-                  <div className="card">
-                    <div className="card__cover">
-                      <img src="img/covers/cover4.jpg" alt="" />
-                      <a href="#" className="card__play">
-                        <i className="icon ion-ios-play"></i>
-                      </a>
-                      <span className="card__rate card__rate--green">7.9</span>
-                    </div>
-                    <div className="card__content">
-                      <h3 className="card__title">
-                        <a href="#">Blindspotting</a>
-                      </h3>
-                      <span className="card__category">
-                        <a href="#">Comedy</a>
-                        <a href="#">Drama</a>
-                      </span>
-                    </div>
-                  </div>
-                </div>
-                {/* <!-- end card --> */}
-
-                {/* <!-- card --> */}
-                <div className="col-6 col-sm-4 col-lg-6">
-                  <div className="card">
-                    <div className="card__cover">
-                      <img src="img/covers/cover5.jpg" alt="" />
-                      <a href="#" className="card__play">
-                        <i className="icon ion-ios-play"></i>
-                      </a>
-                      <span className="card__rate card__rate--green">8.4</span>
-                    </div>
-                    <div className="card__content">
-                      <h3 className="card__title">
-                        <a href="#">I Dream in Another Language</a>
-                      </h3>
-                      <span className="card__category">
-                        <a href="#">Action</a>
-                        <a href="#">Triler</a>
-                      </span>
-                    </div>
-                  </div>
-                </div>
-                {/* <!-- end card --> */}
-
-                {/* <!-- card --> */}
-                <div className="col-6 col-sm-4 col-lg-6">
-                  <div className="card">
-                    <div className="card__cover">
-                      <img src="img/covers/cover6.jpg" alt="" />
-                      <a href="#" className="card__play">
-                        <i className="icon ion-ios-play"></i>
-                      </a>
-                      <span className="card__rate card__rate--green">7.1</span>
-                    </div>
-                    <div className="card__content">
-                      <h3 className="card__title">
-                        <a href="#">Benched</a>
-                      </h3>
-                      <span className="card__category">
-                        <a href="#">Comedy</a>
                       </span>
                     </div>
                   </div>

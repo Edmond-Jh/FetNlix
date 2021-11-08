@@ -5,7 +5,7 @@ import { Link, useHistory } from "react-router-dom";
 import bgpictture from "../../img/section/section.jpg";
 import store from "../store/store";
 export default function Profile() {
-  const userData = useSelector((state) => state.user);
+  const userData = useSelector((state) => state.user.state);
   const [data, setData] = useState();
   const [idNum, setIdNum] = useState();
   const history = useHistory();
@@ -19,9 +19,11 @@ export default function Profile() {
   }, []);
 
   const usersArar = JSON.parse(localStorage.getItem("users"));
-  const userId = usersArar.find(({ id }) => id == idNum);
 
-  console.log(userId);
+  let userId;
+  if (usersArar) {
+    userId = usersArar.find(({ id }) => id == idNum);
+  }
 
   function logouthandler() {
     let OutConfirm = window.confirm("Are You Sure?");
@@ -46,15 +48,17 @@ export default function Profile() {
                     {/* <!-- section title --> */}
                     <h2 className="section__title">
                       Welcome{" "}
-                      {data ? (
-                        idNum ? (
-                          userId?.username
+                      <span style={{ color: "#ffd80e" }}>
+                        {data || userId ? (
+                          idNum ? (
+                            userId?.nickname
+                          ) : (
+                            userData?.nickname
+                          )
                         ) : (
-                          userData?.state?.username
-                        )
-                      ) : (
-                        <div>No Data</div>
-                      )}
+                          <div>No Data</div>
+                        )}
+                      </span>
                     </h2>
                     {/* <!-- end section title --> */}
 
@@ -91,15 +95,17 @@ export default function Profile() {
                           <h3>Username</h3>
                           <span>
                             FetNelix ID:{" "}
-                            {data ? (
-                              idNum ? (
-                                userId?.id
+                            <span style={{ color: "#ffd80e" }}>
+                              {data || userId ? (
+                                idNum ? (
+                                  userId?.id
+                                ) : (
+                                  userData?.id
+                                )
                               ) : (
-                                userData?.state?.id
-                              )
-                            ) : (
-                              <div>No Data</div>
-                            )}
+                                <div>No Data</div>
+                              )}
+                            </span>
                           </span>
                         </div>
                       </div>
