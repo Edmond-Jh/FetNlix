@@ -1,12 +1,10 @@
-import React from "react";
-import { useEffect } from "react";
-
-import { useState } from "react";
+import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import svglogo from "../../img/logo.svg";
 
 export default function Header() {
+  const [data, setData] = useState();
   const ids = localStorage.getItem("UserLogedIn");
 
   const usersArar = JSON.parse(localStorage.getItem("users"));
@@ -14,10 +12,17 @@ export default function Header() {
   if (usersArar) {
     userId = usersArar.find(({ id }) => id == ids);
   }
-  console.log(userId?.nickname);
   const userData = useSelector((state) => state.user.state);
-  console.log(userData);
 
+  function searchHandler(event) {
+    console.log(event.target.value);
+    fetch(
+      `https://api.themoviedb.org/3/search/multi?api_key=7d4244b6d7ea0eeafb4fdb3d41003845&language=en-US&query=${event.target.value}&page=1&include_adult=true`
+    )
+      .then((response) => response.json())
+      .then((res) => setData(res));
+  }
+  console.log(data);
   return (
     <header className="header">
       <div className="container">
@@ -131,11 +136,96 @@ export default function Header() {
               {/* <!-- header auth --> */}
               <div className="header__auth">
                 <form action="#" className="header__search">
-                  <input
-                    className="header__search-input"
-                    type="text"
-                    placeholder="Search..."
-                  />
+                  <div className="dropdown">
+                    <input
+                      className="dropbtn"
+                      placeholder="Search...."
+                      onChange={searchHandler}
+                    />
+                    <div className="dropdown-content">
+                      {console.log(data)}
+                      {!data ? (
+                        <div></div>
+                      ) : (
+                        data?.results.map((data) => {
+                          return (
+                            <>
+                              {data?.media_type == "tv" ? (
+                                <>
+                                  <Link
+                                    className="movie-search-item"
+                                    to={`/tvseries/${data.id}`}
+                                  >
+                                    <img
+                                      src={`https://image.tmdb.org/t/p/w500${data?.poster_path}`}
+                                      alt=""
+                                      className="col-md-4"
+                                    />
+
+                                    <p className="col-md-8">
+                                      {data?.name}
+                                      <br />
+                                      Series
+                                      <br />
+                                      {data?.first_air_date}
+                                    </p>
+                                  </Link>
+                                  <hr />
+                                </>
+                              ) : (
+                                <>
+                                  <Link
+                                    className="movie-search-item"
+                                    to={`/posts/${data.id}`}
+                                  >
+                                    <img
+                                      src={`https://image.tmdb.org/t/p/w500${data?.poster_path}`}
+                                      alt=""
+                                      className="col-md-4"
+                                    />
+
+                                    <p className="col-md-8">
+                                      {data?.title}
+                                      <br />
+                                      {data?.release_date}
+                                    </p>
+                                  </Link>
+                                  <hr />
+                                </>
+                              )}
+                            </>
+                          );
+                        })
+                      )}
+                    </div>
+                  </div>
+                  {/* <div>
+                    <input
+                      className="header__search-input"
+                      type="text"
+                      placeholder="Search..."
+                      onChange={searchHandler}
+                    />
+
+                    {console.log(data)}
+                    <div style={{ display: "flex" }}>
+                      {data ? (
+                        data?.results.map((data) => {
+                          console.log(data);
+                          return (
+                            <div>
+                              <img
+                                src={`https://image.tmdb.org/t/p/w500${data?.logo_path}`}
+                                alt=""
+                              />
+                            </div>
+                          );
+                        })
+                      ) : (
+                        <div></div>
+                      )}
+                    </div>
+                  </div> */}
                   <button className="header__search-button" type="button">
                     <i className="icon ion-ios-search"></i>
                   </button>

@@ -101,6 +101,16 @@ export default function TvSeriesPage() {
                             );
                           })}
                         </li>
+                        <li>
+                          <span>Companies:</span>
+                          {data?.production_companies.map((data) => {
+                            return (
+                              <a key={data.id} className="prSpan">
+                                {data.name}
+                              </a>
+                            );
+                          })}
+                        </li>
                       </ul>
                       <div className="card__description">{data?.overview}</div>
                     </div>
@@ -166,20 +176,7 @@ export default function TvSeriesPage() {
         </div>
         {/* <!--end details content--> */}
       </section>
-      <section className="companieSection">
-        <div className="coutries">
-          <div className="prTitle">Production Companies</div>
-          <div className="coutriesPr">
-            {data?.production_companies.map((data) => {
-              return (
-                <span key={data.id} className="prSpan">
-                  {data.name}
-                </span>
-              );
-            })}
-          </div>
-        </div>
-      </section>
+
       <section className="content">
         <div className="content__head">
           <div className="container">

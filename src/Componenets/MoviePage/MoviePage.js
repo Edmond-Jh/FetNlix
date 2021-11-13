@@ -76,13 +76,15 @@ export default function MoviePage() {
                         </li>
                         <li>
                           <span>Genre:</span>
-                          {data?.genres.map((data) => {
-                            return (
-                              <a key={data.id} href="#">
-                                {data.name}
-                              </a>
-                            );
-                          })}
+                          {data?.genres
+                            ? data?.genres.map((data) => {
+                                return (
+                                  <a key={data.id} href="#">
+                                    {data.name}
+                                  </a>
+                                );
+                              })
+                            : "--"}
                         </li>
                         <li>
                           <span>Release Date: </span>

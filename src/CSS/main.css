@@ -46,6 +46,73 @@ Primary use:	HotFlix Template
 /*==============================
 	Common styles
 ==============================*/
+
+.dropbtn {
+  width: 240px;
+  height: 40px;
+  -webkit-border-radius: 6px;
+  border-radius: 6px;
+  background-color: rgba(210, 201, 255, 0.04);
+  border: 1px solid transparent;
+  font-size: 16px;
+  color: #fff;
+  letter-spacing: 0.4px;
+  padding: 0 50px 0 20px;
+}
+.dropbtn:focus {
+  border-color: #ffd80e;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #1a191f;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  max-width: 239px;
+  overflow-y: scroll;
+  scrollbar-width: none;
+  max-height: 700px;
+}
+.movie-search-item {
+  max-width: 239px;
+  max-height: 100px;
+  display: flex;
+  align-content: center;
+  align-items: center;
+}
+.movie-search-item p {
+  color: white;
+}
+.dropdown-content img {
+  width: 100%;
+}
+.dropdown-content a {
+  color: black;
+  padding: 1px 0px;
+  text-decoration: none;
+}
+
+.dropdown-content a:hover {
+  background-color: black;
+  color: black;
+}
+
+.dropdown:hover .dropdown-content {
+  display: flex;
+  flex-direction: column;
+}
+
+/* .dropdown:hover .dropbtn {
+  background-color: #3e8e41;
+} */
+
 #player {
   width: 100%;
 }
