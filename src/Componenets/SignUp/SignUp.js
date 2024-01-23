@@ -233,9 +233,9 @@ export default function SignUp() {
             <div className="sign__content">
               {/* <!-- registration form --> */}
               <form action="/" className="sign__form" onSubmit={formHandler}>
-                {/* <a href="/sigup" className="sign__logo">
-                  <img src="img/logo.svg" alt="" />
-                </a> */}
+                 <a href="/sigup" className="sign__logo">
+                  <img src="img/newlogo.png" alt="" />
+                </a> 
                 <div className="sign__group">
                   <input
                     type="text"

@@ -1862,11 +1862,16 @@ ul {
 .card__title a:hover {
   color: #fff;
 }
-
+.genres{
+  color: #ffd80e;
+  font-size: small;
+}
 .card__category {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  color: #ffd80e;
+  font-size: small;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
   -webkit-flex-direction: row;

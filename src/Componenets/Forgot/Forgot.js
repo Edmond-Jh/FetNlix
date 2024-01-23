@@ -10,7 +10,7 @@ export default function Forgot() {
               {/* <!-- authorization form --> */}
               <form action="#" className="sign__form">
                 <a href="/forgot" className="sign__logo">
-                  <img src="img/logo.svg" alt="" />
+                  <img src="img/newlogo.png" alt="" />
                 </a>
 
                 <div className="sign__group">

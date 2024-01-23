@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import svglogo from "../../img/logo.svg";
+import svglogo from "../../img/newlogo.png";
 export default function Footer() {
   return (
     <footer className="footer">
@@ -13,7 +13,6 @@ export default function Footer() {
               </a>
 
               <span className="footer__copyright">
-                © 2021 FetNlix
                 <br /> Create by{" "}
                 <a href="/" target="_blank">
                   Mohamad Hossein Nazari

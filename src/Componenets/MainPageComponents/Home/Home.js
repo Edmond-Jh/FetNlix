@@ -4,10 +4,6 @@ import SectionOne from "./SectionOne/SectionOne";
 import SectionTwo from "./SectionTwo/SectionTwo";
 
 import HomeBg from "../../../img/home/home__bg.jpg";
-import HomeBg2 from "../../../img/home/home__bg2.jpg";
-import HomeBg3 from "../../../img/home/home__bg3.jpg";
-import HomeBg4 from "../../../img/home/home__bg4.jpg";
-import HomeBg5 from "../../../img/home/home__bg5.jpg";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -21,6 +17,7 @@ import { Link } from "react-router-dom";
 SwiperCore.use([Navigation]);
 export default function Home() {
   const [post, setPost] = useState();
+  const [Genre, setGenre] = useState();
 
   useEffect(() => {
     fetch(
@@ -31,17 +28,19 @@ export default function Home() {
         setPost(data);
       });
   }, []);
-
+  useEffect(() => {
+    fetch(
+      "https://api.themoviedb.org/3/genre/movie/list?api_key=7d4244b6d7ea0eeafb4fdb3d41003845&language=en-US&page=1"
+    )
+      .then((response) => response.json())
+      .then((data) => setGenre(data));
+  }, []);
   return (
     <>
       <section className="home">
         {/* <!-- home bg --> */}
         <div className="owl-carousel home__bg">
           <div className="item home__cover" data-bg={HomeBg}></div>
-          <div className="item home__cover" data-bg={HomeBg2}></div>
-          <div className="item home__cover" data-bg={HomeBg3}></div>
-          <div className="item home__cover" data-bg={HomeBg4}></div>
-          <div className="item home__cover" data-bg={HomeBg5}></div>
         </div>
         {/* <!-- end home bg --> */}
 
@@ -51,13 +50,6 @@ export default function Home() {
               <h1 className="home__title">
                 <b>Most </b>Popular
               </h1>
-
-              <button className="home__nav home__nav--prev" type="button">
-                <i className="icon ion-ios-arrow-round-back"></i>
-              </button>
-              <button className="home__nav home__nav--next" type="button">
-                <i className="icon ion-ios-arrow-round-forward"></i>
-              </button>
             </div>
 
             <div className="col-12">
@@ -81,16 +73,27 @@ export default function Home() {
                             <i className="icon ion-ios-play"></i>
                           </Link>
                           <span className="card__rate card__rate--green">
-                            {data.vote_average}
+                            {Math.round(data.vote_average * 10) / 10}
                           </span>
                         </div>
                         <div className="card__content">
                           <h3 className="card__title">
                             <a href="#">{data.original_title}</a>
                           </h3>
-                          <span className="card__category">
-                            <a href="#">Action</a>
-                            <a href="#">Triler</a>
+                          <span className="genres">
+                            {data?.genre_ids?.map((genreId, index) => {
+                              const foundGenre = Genre?.genres.find(
+                                (genre) => genre.id === genreId
+                              );
+                              return (
+                                <span key={index}>
+                                  {foundGenre
+                                    ? foundGenre.name
+                                    : `Genre with ID ${genreId} not found`}
+                                  {"  "}
+                                </span>
+                              );
+                            })}
                           </span>
                         </div>
                       </div>

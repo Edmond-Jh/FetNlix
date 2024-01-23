@@ -107,7 +107,7 @@ export default function SignIn() {
                 onSubmit={signInFormHandler}
               >
                 <a href="/signin" className="sign__logo">
-                  <img src="img/logo.svg" alt="" />
+                  <img src="img/newlogo.png" alt="" />
                 </a>
 
                 <div className="sign__group">

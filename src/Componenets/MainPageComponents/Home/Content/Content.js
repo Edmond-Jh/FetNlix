@@ -1,16 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import cover from "../../../../img/covers/cover.jpg";
-import cover2 from "../../../../img/covers/cover2.jpg";
-import cover3 from "../../../../img/covers/cover3.jpg";
+
 import cover4 from "../../../../img/covers/cover4.jpg";
-import cover5 from "../../../../img/covers/cover5.jpg";
-import cover6 from "../../../../img/covers/cover6.jpg";
+
 export default function Content() {
   const [Post, setPost] = useState();
   const [TvS, setTvS] = useState();
   const [Movie, setMovie] = useState();
-  // const [ganre, setGanre] = useState();
+  const [Genre, setGenre] = useState();
+
   useEffect(() => {
     fetch(
       "https://api.themoviedb.org/3/movie/top_rated?api_key=7d4244b6d7ea0eeafb4fdb3d41003845&language=en-US&page=1"
@@ -18,7 +16,7 @@ export default function Content() {
       .then((response) => response.json())
       .then((data) => setPost(data));
   }, []);
-
+  // Top Rated Fetch
   useEffect(() => {
     fetch(
       "https://api.themoviedb.org/3/tv/popular?api_key=7d4244b6d7ea0eeafb4fdb3d41003845&language=en-US&page=1"
@@ -26,13 +24,23 @@ export default function Content() {
       .then((response) => response.json())
       .then((data) => setTvS(data));
   }, []);
+  // Top TV shows
   useEffect(() => {
     fetch(
       "https://api.themoviedb.org/3/movie/now_playing?api_key=7d4244b6d7ea0eeafb4fdb3d41003845&language=en-US&page=1"
     )
       .then((r) => r.json())
       .then((data) => setMovie(data));
-  });
+  }, []);
+  // Top Movies
+  useEffect(() => {
+    fetch(
+      "https://api.themoviedb.org/3/genre/movie/list?api_key=7d4244b6d7ea0eeafb4fdb3d41003845&language=en-US&page=1"
+    )
+      .then((response) => response.json())
+      .then((data) => setGenre(data));
+  }, []);
+  //  Genres
   return (
     <section className="content">
       <div className="content__head">
@@ -85,19 +93,6 @@ export default function Content() {
                     aria-selected="false"
                   >
                     TV SERIES
-                  </a>
-                </li>
-
-                <li className="nav-item">
-                  <a
-                    className="nav-link"
-                    data-toggle="tab"
-                    href="#tab-4"
-                    role="tab"
-                    aria-controls="tab-4"
-                    aria-selected="false"
-                  >
-                    CARTOONS
                   </a>
                 </li>
               </ul>
@@ -212,29 +207,27 @@ export default function Content() {
                           <i className="icon ion-ios-play"></i>
                         </Link>
                         <span className="card__rate card__rate--green">
-                          {data.vote_average}
+                          {Math.round(data.vote_average * 10) / 10}
                         </span>
                       </div>
                       <div className="card__content">
                         <h3 className="card__title">
                           <Link to={`posts/${data.id}`}>{data?.title}</Link>
                         </h3>
-                        <span className="card__category">
-                          {/* {fetch(
-                            `https://api.themoviedb.org/3/movie/${data?.id}?api_key=7d4244b6d7ea0eeafb4fdb3d41003845&language=en-US`
-                          )
-                            .then((response) => response.json())
-                            .then((ss) => {
-                              setGanre(ss);
-                              console.log(ss);
-                            })}
-                          {ganre?.genres.map((da) => {
-                            return (
-                              <a key={da.id} href="#">
-                                {da.name}
-                              </a>
+                        <span className="genres">
+                          {data?.genre_ids?.map((genreId, index) => {
+                            const foundGenre = Genre?.genres.find(
+                              (genre) => genre.id === genreId
                             );
-                          })} */}
+                            return (
+                              <span key={index}>
+                                {foundGenre
+                                  ? foundGenre.name
+                                  : `Genre with ID ${genreId} not found`}
+                                {"  "}
+                              </span>
+                            );
+                          })}
                         </span>
                       </div>
                     </div>
@@ -267,15 +260,27 @@ export default function Content() {
                           <i className="icon ion-ios-play"></i>
                         </Link>
                         <span className="card__rate card__rate--green">
-                          {data.vote_average}
+                          {Math.round(data.vote_average * 10) / 10}
                         </span>
                       </div>
                       <div className="card__content">
                         <h3 className="card__title">
                           <Link to={`posts/${data.id}`}>{data?.title}</Link>
                         </h3>
-                        <span className="card__category">
-                          <a href="#">Comedy</a>
+                        <span className="genres">
+                          {data?.genre_ids?.map((genreId, index) => {
+                            const foundGenre = Genre?.genres.find(
+                              (genre) => genre.id === genreId
+                            );
+                            return (
+                              <span key={index}>
+                                {foundGenre
+                                  ? foundGenre.name
+                                  : `Genre with ID ${genreId} not found`}
+                                {"  "}
+                              </span>
+                            );
+                          })}
                         </span>
                       </div>
                     </div>
@@ -308,15 +313,27 @@ export default function Content() {
                           <i className="icon ion-ios-play"></i>
                         </Link>
                         <span className="card__rate card__rate--green">
-                          7.1
+                          {Math.round(data.vote_average * 10) / 10}
                         </span>
                       </div>
                       <div className="card__content">
                         <h3 className="card__title">
                           <Link to={`posts/${data.id}`}>{data?.name}</Link>
                         </h3>
-                        <span className="card__category">
-                          <a href="#">Comedy</a>
+                        <span className="genres">
+                          {data?.genre_ids?.map((genreId, index) => {
+                            const foundGenre = Genre?.genres.find(
+                              (genre) => genre.id === genreId
+                            );
+                            return (
+                              <span key={index}>
+                                {foundGenre
+                                  ? foundGenre.name
+                                  : `Genre with ID ${genreId} not found`}
+                                {"  "}
+                              </span>
+                            );
+                          })}
                         </span>
                       </div>
                     </div>

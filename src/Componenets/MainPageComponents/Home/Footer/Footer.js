@@ -1,6 +1,6 @@
 import React from "react";
 
-import svglogo from "../../../../img/logo.svg";
+import svglogo from "../../../../img/newlogo.png";
 export default function Footer() {
   return (
     <footer className="footer">
@@ -13,7 +13,7 @@ export default function Footer() {
               </a>
 
               <span className="footer__copyright">
-                © 2021 FetNlix
+                © 2024 FetNlix
                 <br /> Create by{" "}
                 <a
                   href="https://themeforest.net/user/dmitryvolkov/portfolio"

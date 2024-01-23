@@ -2,35 +2,23 @@ import React from "react";
 
 export default function SectionTwo() {
   return (
-    <section className="section">
-      <div className="container">
-        <div className="row">
-          <div className="col-12">
-            <h2 className="section__title">
-              <b>HotFlix</b> – Best Place for Movies
-            </h2>
-            <p className="section__text">
-              It is a long established fact that a reader will be distracted by
-              the readable content of a page when looking at its layout. The
-              point of <b>using Lorem</b> Ipsum is that it has a more-or-less
-              normal distribution of letters, as opposed to using. Many desktop
-              publishing packages and web page editors now use Lorem Ipsum as
-              their default model text, and a search for 'lorem ipsum' will
-              uncover many web sites still in their infancy.
-            </p>
-
-            <p className="section__text">
-              Content here, content here, making it look like{" "}
-              <a href="#">readable</a> English. Many desktop publishing packages
-              and web page editors now use Lorem Ipsum as their default model
-              text, and a search for 'lorem ipsum' will uncover many web sites
-              still in their infancy. Various versions have evolved over the
-              years, sometimes by accident, sometimes on purpose (injected
-              humour and the like).
-            </p>
-          </div>
-        </div>
+<section className="section">
+  <div className="container">
+    <div className="row">
+      <div className="col-12">
+        <h2 className="section__title">
+          <b>About <span style={{ color: "red" }}>Me</span> & <span style={{ color: "#ffd80e" }}>FetNlix</span></b>
+        </h2>
+        <p className="section__text">
+          Hey there, I'm not your typical React Junior Developer—I'm on a mission. Picture this: a movie website, but not just any website. It's an immersive journey into the cinematic universe, fueled by my passion for React wizardry. 🚀
+        </p>
+        <p className="section__text">
+          At the core of this digital spectacle is the fusion of real-time movie magic from TheMovieDb and my commitment to cutting-edge front-end development. Brace yourself for an experience that goes beyond aesthetics; it's a symphony of functionality and trendsetting design. I'm not just staying current; I'm defining the next wave in digital experiences. 🌊
+        </p>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
+
   );
 }

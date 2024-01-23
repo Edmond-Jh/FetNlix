@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import svglogo from "../../img/logo.svg";
+import svglogo from "../../img/newlogo.png";
 
 export default function Header() {
   const [data, setData] = useState();
@@ -47,7 +47,7 @@ export default function Header() {
 
                 {/* <!-- dropdown --> */}
                 <li className="header__nav-item">
-                  <a
+                  {/* <a
                     className="dropdown-toggle header__nav-link"
                     href="/"
                     role="button"
@@ -57,8 +57,7 @@ export default function Header() {
                     aria-expanded="false"
                   >
                     Catalog
-                  </a>
-
+                  </a> */}
                   <ul
                     className="dropdown-menu header__dropdown-menu"
                     aria-labelledby="dropdownMenuCatalog"
