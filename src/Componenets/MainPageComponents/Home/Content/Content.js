@@ -329,7 +329,7 @@ export default function Content() {
             </div>
           </div>
 
-          {/* <div
+           <div
             className="tab-pane fade"
             id="tab-4"
             role="tabpanel"
@@ -351,13 +351,13 @@ export default function Content() {
                     </h3>
                     <span className="card__category">
                       <a href="#">Comedy</a>
-                      <a href="#">Drama</a>
+                      <a href="#">Drama</a>-
                     </span>
                   </div>
                 </div>
               </div>
             </div>
-          </div> */}
+          </div> 
         </div>
         {/* <!-- end content tabs --> */}
       </div>
