@@ -329,7 +329,7 @@ export default function Content() {
             </div>
           </div>
 
-           <div
+          {/* <div
             className="tab-pane fade"
             id="tab-4"
             role="tabpanel"
@@ -357,7 +357,7 @@ export default function Content() {
                 </div>
               </div>
             </div>
-          </div> 
+          </div> */}
         </div>
         {/* <!-- end content tabs --> */}
       </div>
