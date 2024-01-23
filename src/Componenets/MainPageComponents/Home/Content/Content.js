@@ -158,20 +158,6 @@ export default function Content() {
                         TV SERIES
                       </a>
                     </li>
-
-                    <li className="nav-item">
-                      <a
-                        className="nav-link"
-                        id="4-tab"
-                        data-toggle="tab"
-                        href="#tab-4"
-                        role="tab"
-                        aria-controls="tab-4"
-                        aria-selected="false"
-                      >
-                        CARTOONS
-                      </a>
-                    </li>
                   </ul>
                 </div>
               </div>
@@ -343,14 +329,13 @@ export default function Content() {
             </div>
           </div>
 
-          <div
+          {/* <div
             className="tab-pane fade"
             id="tab-4"
             role="tabpanel"
             aria-labelledby="4-tab"
           >
             <div className="row">
-              {/* <!-- card --> */}
               <div className="col-6 col-sm-4 col-md-3 col-xl-2">
                 <div className="card">
                   <div className="card__cover">
@@ -371,9 +356,8 @@ export default function Content() {
                   </div>
                 </div>
               </div>
-              {/* <!-- end card --> */}
             </div>
-          </div>
+          </div> */}
         </div>
         {/* <!-- end content tabs --> */}
       </div>
