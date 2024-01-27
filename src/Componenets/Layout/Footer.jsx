@@ -14,7 +14,7 @@ export default function Footer() {
 
               <span className="footer__copyright">
                 <br /> Create by{" "}
-                <a href="/" target="_blank">
+                <a href="https://www.mohamadhosseinnazari.ir" target="_blank">
                   Mohamad Hossein Nazari
                 </a>
               </span>

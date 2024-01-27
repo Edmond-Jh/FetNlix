@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-import cover4 from "../../../../img/covers/cover4.jpg";
 
 export default function Content() {
   const [Post, setPost] = useState();
@@ -328,36 +327,6 @@ export default function Content() {
               })}
             </div>
           </div>
-
-          {/* <div
-            className="tab-pane fade"
-            id="tab-4"
-            role="tabpanel"
-            aria-labelledby="4-tab"
-          >
-            <div className="row">
-              <div className="col-6 col-sm-4 col-md-3 col-xl-2">
-                <div className="card">
-                  <div className="card__cover">
-                    <img src={cover4} alt="" />
-                    <a href="#" className="card__play">
-                      <i className="icon ion-ios-play"></i>
-                    </a>
-                    <span className="card__rate card__rate--green">7.9</span>
-                  </div>
-                  <div className="card__content">
-                    <h3 className="card__title">
-                      <a href="#">Blindspotting</a>
-                    </h3>
-                    <span className="card__category">
-                      <a href="#">Comedy</a>
-                      <a href="#">Drama</a>-
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div> */}
         </div>
         {/* <!-- end content tabs --> */}
       </div>

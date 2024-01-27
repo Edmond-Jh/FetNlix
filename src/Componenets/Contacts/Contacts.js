@@ -86,19 +86,18 @@ export default function Contacts() {
 
                 <div className="col-12">
                   <p className="section__text">
-                    It is a long fact that a reader will be distracted by the
-                    readable content of a page when looking at its layout. The
-                    point of using Lorem Ipsum is that it has a more-or-less
-                    normal distribution of letters, as opposed to using.
+                    Hey This is me How can i Help you?
+                    if you need anything you can contact me with this form
+                    i will be happy to help you :)
                   </p>
 
                   <ul className="contacts__list">
                     <li>
-                      <a href="tel:+18002345678">+1 (800) 234-5678</a>
+                      <a href="tel:+18002345678">+7 (000) 000-0000</a>
                     </li>
                     <li>
                       <a href="mailto:support@moviego.com">
-                        support@flixgo.com
+                        randomtext@random.com
                       </a>
                     </li>
                   </ul>

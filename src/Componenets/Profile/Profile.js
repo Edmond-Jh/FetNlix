@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-
 import { useSelector } from "react-redux";
 import { Link, useHistory } from "react-router-dom";
 import bgpictture from "../../img/section/section.jpg";
@@ -24,6 +23,7 @@ export default function Profile() {
   if (usersArar) {
     userId = usersArar.find(({ id }) => id == idNum);
   }
+  console.log(userId);
 
   function logouthandler() {
     let OutConfirm = window.confirm("Are You Sure?");
@@ -33,8 +33,12 @@ export default function Profile() {
       history.replace("/");
     }
   }
+  function changeInfo(event){
+    event.preventDefault();
+  }
+  console.log(userId);
   return (
-    <div>
+    <>
       {userId ? (
         <div>
           <section
@@ -225,7 +229,7 @@ export default function Profile() {
                   <div className="row">
                     {/* <!-- details form --> */}
                     <div className="col-12 col-lg-6">
-                      <form action="#" className="profile__form">
+                      <form action="#" className="profile__form" onSubmit={changeInfo}>
                         <div className="row">
                           <div className="col-12">
                             <h4 className="profile__title">Profile details</h4>
@@ -244,7 +248,7 @@ export default function Profile() {
                                 type="text"
                                 name="username"
                                 className="profile__input"
-                                placeholder="User 123"
+                                placeholder={userId?.nickname}
                               />
                             </div>
                           </div>
@@ -259,7 +263,7 @@ export default function Profile() {
                                 type="text"
                                 name="email"
                                 className="profile__input"
-                                placeholder="email@email.com"
+                                placeholder={userId?.email}
                               />
                             </div>
                           </div>
@@ -277,7 +281,7 @@ export default function Profile() {
                                 type="text"
                                 name="firstname"
                                 className="profile__input"
-                                placeholder="John"
+                                placeholder={userId?.firstname}
                               />
                             </div>
                           </div>
@@ -295,7 +299,7 @@ export default function Profile() {
                                 type="text"
                                 name="lastname"
                                 className="profile__input"
-                                placeholder="Doe"
+                                placeholder={userId?.lastname}
                               />
                             </div>
                           </div>
@@ -479,122 +483,17 @@ export default function Profile() {
           </div>
           {/* <!-- end content --> */}
 
-          {/* <!-- partners --> */}
-          <section className="section section--grid section--border">
-            <div className="container">
-              <div className="row">
-                {/* <!-- section title --> */}
-                <div className="col-12">
-                  <h2 className="section__title section__title--no-margin">
-                    Our Partners
-                  </h2>
-                </div>
-                {/* <!-- end section title --> */}
 
-                {/* <!-- section text --> */}
-                <div className="col-12">
-                  <p className="section__text section__text--last-with-margin">
-                    It is a long <b>established</b> fact that a reader will be
-                    distracted by the readable content of a page when looking at
-                    its layout. The point of using Lorem Ipsum is that it has a
-                    more-or-less normal distribution of letters, as opposed to
-                    using.
-                  </p>
-                </div>
-                {/* <!-- end section text --> */}
-
-                {/* <!-- partner --> */}
-                <div className="col-6 col-sm-4 col-md-3 col-lg-2">
-                  <a href="/" className="partner">
-                    <img
-                      src="img/partners/themeforest-light-background.png"
-                      alt=""
-                      className="partner__img"
-                    />
-                  </a>
-                </div>
-                {/* <!-- end partner --> */}
-
-                {/* <!-- partner --> */}
-                <div className="col-6 col-sm-4 col-md-3 col-lg-2">
-                  <a href="/" className="partner">
-                    <img
-                      src="img/partners/audiojungle-light-background.png"
-                      alt=""
-                      className="partner__img"
-                    />
-                  </a>
-                </div>
-                {/* <!-- end partner --> */}
-
-                {/* <!-- partner --> */}
-                <div className="col-6 col-sm-4 col-md-3 col-lg-2">
-                  <a href="/" className="partner">
-                    <img
-                      src="img/partners/codecanyon-light-background.png"
-                      alt=""
-                      className="partner__img"
-                    />
-                  </a>
-                </div>
-                {/* <!-- end partner --> */}
-
-                {/* <!-- partner --> */}
-                <div className="col-6 col-sm-4 col-md-3 col-lg-2">
-                  <a href="/" className="partner">
-                    <img
-                      src="img/partners/photodune-light-background.png"
-                      alt=""
-                      className="partner__img"
-                    />
-                  </a>
-                </div>
-                {/* <!-- end partner --> */}
-
-                {/* <!-- partner --> */}
-                <div className="col-6 col-sm-4 col-md-3 col-lg-2">
-                  <a href="/" className="partner">
-                    <img
-                      src="img/partners/activeden-light-background.png"
-                      alt=""
-                      className="partner__img"
-                    />
-                  </a>
-                </div>
-                {/* <!-- end partner --> */}
-
-                {/* <!-- partner --> */}
-                <div className="col-6 col-sm-4 col-md-3 col-lg-2">
-                  <a href="/" className="partner">
-                    <img
-                      src="img/partners/3docean-light-background.png"
-                      alt=""
-                      className="partner__img"
-                    />
-                  </a>
-                </div>
-                {/* <!-- end partner --> */}
-              </div>
-            </div>
-          </section>
         </div>
       ) : (
-        <div style={{ display: "flex", justifyContent: "center" }}>
-          <h1
-            style={{
-              color: "Red",
-              width: "700px",
-              height: "500px",
-              fontSize: "90px",
-              padding: "50px",
-              textAlign: "center",
-            }}
-          >
-            No Data
-            <br /> Try To Sign in Again
-          </h1>
+        <div className="loginprofile">
+          <div>You Most Login First 😄</div>
+          <Link className="header__sign-in" to="/signin">
+            <i className="icon ion-ios-log-in"></i>
+            <span>Lets Go!</span>
+          </Link>
         </div>
       )}
-    </div>
+    </>
   );
 }

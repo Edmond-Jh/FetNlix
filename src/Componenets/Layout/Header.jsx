@@ -22,59 +22,29 @@ export default function Header() {
       .then((response) => response.json())
       .then((res) => setData(res));
   }
-  console.log(data);
   return (
     <header className="header">
       <div className="container">
         <div className="row">
           <div className="col-12">
             <div className="header__content">
-              {/* <!-- header logo --> */}
               <a href="/" className="header__logo">
                 <img src={svglogo} alt="" />
               </a>
-              {/* <!-- end header logo --> */}
-
-              {/* <!-- header nav --> */}
               <ul className="header__nav">
-                {/* <!-- dropdown --> */}
                 <li className="header__nav-item">
                   <Link to="/" className="header__nav-link">
                     Home
                   </Link>
                 </li>
-                {/* <!-- end dropdown --> */}
-
-                {/* <!-- dropdown --> */}
                 <li className="header__nav-item">
-                  {/* <a
-                    className="dropdown-toggle header__nav-link"
-                    href="/"
-                    role="button"
-                    id="dropdownMenuCatalog"
-                    data-toggle="dropdown"
-                    aria-haspopup="true"
-                    aria-expanded="false"
-                  >
-                    Catalog
-                  </a> */}
-                  <ul
-                    className="dropdown-menu header__dropdown-menu"
-                    aria-labelledby="dropdownMenuCatalog"
-                  >
-                    <li>
-                      <Link to="/catalog">Catalog</Link>
-                    </li>
-                    <li>
-                      <Link to="/details">Movie Detail</Link>
-                    </li>
-                  </ul>
+                  <Link to="/Profile" className="header__nav-link">
+                  Profile
+                  </Link>
                 </li>
-                {/* <!-- end dropdown --> */}
-
                 <li className="header__nav-item">
-                  <Link className="header__nav-link" to="/pricing">
-                    Pricing Plan
+                  <Link to="/about" className="header__nav-link">
+                  About Us
                   </Link>
                 </li>
 
@@ -142,7 +112,6 @@ export default function Header() {
                       onChange={searchHandler}
                     />
                     <div className="dropdown-content">
-                      {console.log(data)}
                       {!data ? (
                         <div></div>
                       ) : (

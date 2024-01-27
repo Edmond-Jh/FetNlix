@@ -38,7 +38,7 @@ const About = () => {
             {/* <!-- section title --> */}
             <div className="col-12">
               <h2 className="section__title">
-                <b>HotFlix</b> – Best Place for Movies
+                <b>FetNlix</b> – Best Place for Movies
               </h2>
             </div>
             {/* <!-- end section title --> */}
@@ -46,22 +46,16 @@ const About = () => {
             {/* <!-- section text --> */}
             <div className="col-12">
               <p className="section__text">
-                It is a long <b>established</b> fact that a reader will be
-                distracted by the readable content of a page when looking at its
-                layout. The point of using Lorem Ipsum is that it has a
-                more-or-less normal distribution of letters, as opposed to
-                using.
+                Welcome to my website, where you can explore and discover movies
+                that capture your interest. Built with React, this platform
+                combines my passion for movies with cutting-edge technologies.
+                Leveraging tools like React Redux, Axios, React Toastify, and
+                React Swiper, I've crafted a fully dynamic website. It not only
+                allows you to review and search for movies but also boasts a
+                seamless single-page form experience. Join me on this cinematic
+                journey, and let's explore the world of movies together
               </p>
 
-              <p className="section__text section__text--last-with-margin">
-                'Content here, content here', making it look like{" "}
-                <a href="/">readable</a> English. Many desktop publishing
-                packages and web page editors now use Lorem Ipsum as their
-                default model text, and a search for 'lorem ipsum' will uncover
-                many web sites still in their infancy. Various versions have
-                evolved over the years, sometimes by accident, sometimes on
-                purpose (injected humour and the like).
-              </p>
             </div>
             {/* <!-- end section text --> */}
 
@@ -144,162 +138,6 @@ const About = () => {
               </div>
             </div>
             {/* <!-- end feature --> */}
-          </div>
-        </div>
-      </section>
-      ;{/* <!-- end about --> */}
-      {/* <!-- how it works --> */}
-      <section className="section section--grid section--border">
-        <div className="container">
-          <div className="row">
-            {/* <!-- section title --> */}
-            <div className="col-12">
-              <h2 className="section__title section__title--no-margin">
-                How it works?
-              </h2>
-            </div>
-            {/* <!-- end section title --> */}
-
-            {/* <!-- how box --> */}
-            <div className="col-12 col-md-6 col-lg-4">
-              <div className="how">
-                <span className="how__number">01</span>
-                <h3 className="how__title">Create an account</h3>
-                <p className="how__text">
-                  It has never been an issue to find an old movie or TV show on
-                  the internet. However, this is not the case with the new
-                  releases.
-                </p>
-              </div>
-            </div>
-            {/* <!-- ebd how box --> */}
-
-            {/* <!-- how box --> */}
-            <div className="col-12 col-md-6 col-lg-4">
-              <div className="how">
-                <span className="how__number">02</span>
-                <h3 className="how__title">Choose your Plan</h3>
-                <p className="how__text">
-                  It has never been an issue to find an old movie or TV show on
-                  the internet. However, this is not the case with the new
-                  releases.
-                </p>
-              </div>
-            </div>
-            {/* <!-- ebd how box --> */}
-
-            {/* <!-- how box --> */}
-            <div className="col-12 col-md-6 col-lg-4">
-              <div className="how">
-                <span className="how__number">03</span>
-                <h3 className="how__title">Enjoy MovieGo</h3>
-                <p className="how__text">
-                  It has never been an issue to find an old movie or TV show on
-                  the internet. However, this is not the case with the new
-                  releases.
-                </p>
-              </div>
-            </div>
-            {/* <!-- ebd how box --> */}
-          </div>
-        </div>
-      </section>
-      ;{/* <!-- end how it works --> */}
-      {/* <!-- partners --> */}
-      <section className="section section--grid section--border">
-        <div className="container">
-          <div className="row">
-            {/* <!-- section title --> */}
-            <div className="col-12">
-              <h2 className="section__title section__title--no-margin">
-                Our Partners
-              </h2>
-            </div>
-            {/* <!-- end section title --> */}
-
-            {/* <!-- section text --> */}
-            <div className="col-12">
-              <p className="section__text section__text--last-with-margin">
-                It is a long <b>established</b> fact that a reader will be
-                distracted by the readable content of a page when looking at its
-                layout. The point of using Lorem Ipsum is that it has a
-                more-or-less normal distribution of letters, as opposed to
-                using.
-              </p>
-            </div>
-            {/* <!-- end section text --> */}
-
-            {/* <!-- partner --> */}
-            <div className="col-6 col-sm-4 col-md-3 col-lg-2">
-              <a href="/" className="partner">
-                <img
-                  src="img/partners/themeforest-light-background.png"
-                  alt=""
-                  className="partner__img"
-                />
-              </a>
-            </div>
-            {/* <!-- end partner --> */}
-
-            {/* <!-- partner --> */}
-            <div className="col-6 col-sm-4 col-md-3 col-lg-2">
-              <a href="/" className="partner">
-                <img
-                  src="img/partners/audiojungle-light-background.png"
-                  alt=""
-                  className="partner__img"
-                />
-              </a>
-            </div>
-            {/* <!-- end partner --> */}
-
-            {/* <!-- partner --> */}
-            <div className="col-6 col-sm-4 col-md-3 col-lg-2">
-              <a href="/" className="partner">
-                <img
-                  src="img/partners/codecanyon-light-background.png"
-                  alt=""
-                  className="partner__img"
-                />
-              </a>
-            </div>
-            {/* <!-- end partner --> */}
-
-            {/* <!-- partner --> */}
-            <div className="col-6 col-sm-4 col-md-3 col-lg-2">
-              <a href="/" className="partner">
-                <img
-                  src="img/partners/photodune-light-background.png"
-                  alt=""
-                  className="partner__img"
-                />
-              </a>
-            </div>
-            {/* <!-- end partner --> */}
-
-            {/* <!-- partner --> */}
-            <div className="col-6 col-sm-4 col-md-3 col-lg-2">
-              <a href="/" className="partner">
-                <img
-                  src="img/partners/activeden-light-background.png"
-                  alt=""
-                  className="partner__img"
-                />
-              </a>
-            </div>
-            {/* <!-- end partner --> */}
-
-            {/* <!-- partner --> */}
-            <div className="col-6 col-sm-4 col-md-3 col-lg-2">
-              <a href="/" className="partner">
-                <img
-                  src="img/partners/3docean-light-background.png"
-                  alt=""
-                  className="partner__img"
-                />
-              </a>
-            </div>
-            {/* <!-- end partner --> */}
           </div>
         </div>
       </section>

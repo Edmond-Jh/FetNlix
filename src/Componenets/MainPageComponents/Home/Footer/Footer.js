@@ -16,7 +16,7 @@ export default function Footer() {
                 © 2024 FetNlix
                 <br /> Create by{" "}
                 <a
-                  href="https://themeforest.net/user/dmitryvolkov/portfolio"
+                  href="https://www.mohamadhosseinnazari.ir/"
                   target="_blank"
                 >
                   Mohamad Hossein Nazari

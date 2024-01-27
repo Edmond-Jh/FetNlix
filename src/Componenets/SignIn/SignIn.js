@@ -44,10 +44,10 @@ export default function SignIn() {
       toasted("error", "Password Must Be Fill");
       return;
     }
-    if (!checkBox) {
-      toasted("error", "CheckBox Must be Checked");
-      return;
-    }
+    // if (!checkBox) {
+    //   toasted("error", "CheckBox Must be Checked");
+    //   return;
+    // }
 
     const validUser = userData.find(
       (data) => data.email === email && data.password === password

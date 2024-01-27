@@ -5,7 +5,7 @@ import str from "./Componenets/store/store";
 import App from "./App";
 // import store from "./Componenets/store/store/";
 
-alert("وبسایت فیلتر است لطفا از فیلتر شکن استفاده نمایید");
+alert("Data is filtered for some countries Please use VPN For Better Experience");
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={str}>

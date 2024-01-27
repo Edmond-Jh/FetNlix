@@ -1732,7 +1732,26 @@ ul {
     margin-top: 0;
   }
 }
-
+.loginprofile{
+  display: flex;
+  margin: 35vh;
+  color: white;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  flex-direction: column;
+}
+.loginprofile div{
+  margin: 3vh;
+  padding: 1vh;
+  border-radius: 10px;
+  border: 2px solid red;
+  font-size: larger;
+}
+.loginprofile a{
+  padding: 10px;
+  margin-left: 0;
+}
 /*==============================
 	Card
 ==============================*/
@@ -1750,6 +1769,7 @@ ul {
 
 .card__cover img {
   width: 100%;
+      height: 100%;
 }
 
 .card__cover:before {
