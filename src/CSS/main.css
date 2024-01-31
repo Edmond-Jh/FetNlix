@@ -46,7 +46,9 @@ Primary use:	HotFlix Template
 /*==============================
 	Common styles
 ==============================*/
-
+::-webkit-scrollbar {
+  display: none;
+}
 .dropbtn {
   width: 240px;
   height: 40px;
